@@ -15,7 +15,6 @@ public class ArrayShape {
 	public static double row_coordinates;
 	public static double col_coordinates;
 	
-	
 	public ArrayShape() {
 		// TODO Auto-generated constructor stub
 	}
@@ -121,7 +120,6 @@ public class ArrayShape {
 			}
 			length = 0; //reset counter
 		}
-		
 		return (max);
 	}
 	
