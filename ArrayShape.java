@@ -41,7 +41,6 @@ public class ArrayShape {
 					array[row][col] = kb.nextInt();
 				}
 			}
-			
 			displayArray(array);
 			
 			System.out.println("Is this correct? (1 = yes/0 = no)");
@@ -68,7 +67,6 @@ public class ArrayShape {
 							" longest col len: " +longestColLength);
 		System.out.println("rowMid: "+rowMid + " colMid: " +colMid+ " row_coord: "+
 							row_coordinates+ " col_coord: " +col_coordinates);
-							
 	}
 	
 	public static double getRowCoordinates()
