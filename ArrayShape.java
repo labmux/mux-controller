@@ -60,21 +60,29 @@ public class ArrayShape {
 		{
 			if(longestRowLength > longestColLength)
 			{
-				row_coordinates = getRowCoordinates();
+				row_coordinates = (getRowCoordinates() + .5);
 				col_coordinates = rowMid;
 			}
 			
 			else if(longestColLength > longestRowLength)
 			{
 				row_coordinates = colMid;
-				col_coordinates = getColCoordinates();
+				col_coordinates = (getColCoordinates() + .5);
 			}
 		}
 		
 		else
 		{
-			row_coordinates = (getRowCoordinates() );
-			col_coordinates = (getColCoordinates() );
+			row_coordinates = (getRowCoordinates());
+			col_coordinates = (getColCoordinates());
+			int[][] mini_array = new int[(int) longestRowLength][(int)longestColLength];
+
+			MidArray mid = new MidArray(mini_array);
+			rowMid = mid.getMidRow();
+			colMid = mid.getMidCol();
+			
+			row_coordinates = (getRowCoordinates() + rowMid);
+			col_coordinates = (getColCoordinates() + colMid);
 		}
 	}
 	
@@ -91,12 +99,12 @@ public class ArrayShape {
 	
 	public static double getRowCoordinates()
 	{
-		return (row_coordinates + .5);	//.5 added for centering
+		return (row_coordinates);	//.5 added for centering
 	}
 	
 	public static double getColCoordinates()
 	{
-		return (col_coordinates + .5);
+		return (col_coordinates);
 	}
 	
 	public static void displayArray(int array[][])

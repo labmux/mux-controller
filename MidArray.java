@@ -2,8 +2,8 @@ package iconAlgorithm;
 
 public class MidArray {
 	//array's rows and columns
-	private static int rows;	
-	private static int col;
+	private static double rows;	
+	private static double col;
 	
 	//mid point of rows and columns
 	private static double midRow; 
@@ -60,5 +60,45 @@ public class MidArray {
 		String coordinates = "Center is at coordinates: ";
 		
 		return coordinates + "[" +midRow+"]" + "[" +midCol+ "]";
+	}
+
+	public static double getRows() 
+	{
+		return rows;
+	}
+
+	public static void setRows(int rows) 
+	{
+		MidArray.rows = rows;
+	}
+
+	public static double getCol() 
+	{
+		return col;
+	}
+
+	public static void setCol(int col) 
+	{
+		MidArray.col = col;
+	}
+
+	public static double getMidRow() 
+	{
+		return midRow;
+	}
+
+	public static void setMidRow(double midRow) 
+	{
+		MidArray.midRow = midRow;
+	}
+
+	public static double getMidCol() 
+	{
+		return midCol;
+	}
+
+	public static void setMidCol(double midCol) 
+	{
+		MidArray.midCol = midCol;
 	}
 }
