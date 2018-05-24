@@ -69,7 +69,6 @@ public class ArrayShape {
 							" longest col len: " +longestColLength);
 		System.out.println("rowMid: "+rowMid + " colMid: " +colMid+ " row_coord: "+
 							row_coordinates+ " col_coord: " +col_coordinates);
-							
 	}
 	
 	public static double getRowCoordinates()
@@ -149,6 +148,7 @@ public class ArrayShape {
 			}
 			length = 0; //reset counter
 		}
+		
 		return (max);
 	}
 	
