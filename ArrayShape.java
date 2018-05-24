@@ -15,7 +15,6 @@ public class ArrayShape {
 	public static double row_coordinates;
 	public static double col_coordinates;
 	
-	
 	public ArrayShape() {
 		// TODO Auto-generated constructor stub
 	}
@@ -42,7 +41,6 @@ public class ArrayShape {
 					array[row][col] = kb.nextInt();
 				}
 			}
-			
 			displayArray(array);
 			
 			System.out.println("Is this correct? (1 = yes/0 = no)");
@@ -120,7 +118,6 @@ public class ArrayShape {
 			}
 			length = 0; //reset counter
 		}
-		
 		return (max);
 	}
 	
