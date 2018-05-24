@@ -15,6 +15,7 @@ public class ArrayShape {
 	public static double row_coordinates;
 	public static double col_coordinates;
 	
+	
 	public ArrayShape() {
 		// TODO Auto-generated constructor stub
 	}
@@ -37,10 +38,11 @@ public class ArrayShape {
 			{
 				for (int col = 0; col < arr[0].length; col++) 
 				{
-					System.out.print("Cell: [" +row+ "][" +col+ "] ");
+					System.out.print("Cell [" +row+ "][" +col+ "]: ");
 					array[row][col] = kb.nextInt();
 				}
 			}
+			
 			displayArray(array);
 			
 			System.out.println("Is this correct? (1 = yes/0 = no)");
@@ -54,8 +56,26 @@ public class ArrayShape {
 		rowMid = MidArray.midPoint(longestRowLength);
 		colMid = MidArray.midPoint(longestColLength);
 		
-		row_coordinates = getRowCoordinates();
-		col_coordinates = getColCoordinates();
+		if(longestRowLength !=  longestColLength)
+		{
+			if(longestRowLength > longestColLength)
+			{
+				row_coordinates = getRowCoordinates();
+				col_coordinates = rowMid;
+			}
+			
+			else if(longestColLength > longestRowLength)
+			{
+				row_coordinates = colMid;
+				col_coordinates = getColCoordinates();
+			}
+		}
+		
+		else
+		{
+			row_coordinates = (getRowCoordinates() );
+			col_coordinates = (getColCoordinates() );
+		}
 	}
 	
 	/**
@@ -71,12 +91,12 @@ public class ArrayShape {
 	
 	public static double getRowCoordinates()
 	{
-		return (row_coordinates);
+		return (row_coordinates + .5);	//.5 added for centering
 	}
 	
 	public static double getColCoordinates()
 	{
-		return (col_coordinates);
+		return (col_coordinates + .5);
 	}
 	
 	public static void displayArray(int array[][])
@@ -101,25 +121,25 @@ public class ArrayShape {
 	 */
 	public static int getLongestRowLength(int arr[][])
 	{
+		int counter = 0;
 		int length = 0;
-		int max = 0;
 		
 		for (int row = 0; row < arr.length; row++) 
 		{
 			for (int col = 0; col < arr[0].length; col++) 
 			{
 				if(arr[row][col] == 1)
-					length++;
-				if(length > max)
+					counter++;
+				if(counter > length)
 				{
-					max = length;
+					length = counter;
 					row_coordinates = row;
 				}
 			}
-			length = 0; //reset counter
+			counter = 0; //reset counter
 		}
 		
-		return (max);
+		return (length);
 	}
 	
 	/**
@@ -129,30 +149,30 @@ public class ArrayShape {
 	 */
 	public static int getLongestColLength(int arr[][])
 	{
+		int counter = 0;
 		int length = 0;
-		int max = 0;
 		
 		for (int col = 0; col < arr[0].length; col++) 
 		{
 			for (int row = 0; row < arr.length; row++)
 			{
 				if(arr[row][col] == 1)
-					length++;
-				if(length > max)
+					counter++;
+				if(counter > length)
 				{
-					max = length;
+					length = counter;
 					col_coordinates = col;
 				}
 			}
-			length = 0; //reset counter
+			counter = 0; //reset counter
 		}
 		
-		return (max);
+		return (length);
 	}
 	
 	public String toString()
 	{
-		return ("V1: Center is at coordinates : [" +(row_coordinates +.5)+ "][" +(col_coordinates+.5)+ "]");
+		return ("Center is at coordinates : [" +(row_coordinates)+ "][" +(col_coordinates)+ "]");
 	}
 	
 }

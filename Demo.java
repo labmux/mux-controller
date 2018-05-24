@@ -25,6 +25,7 @@ public class Demo {
 		{
 			case 1: 
 				MidArray mid = new MidArray(grid);
+				
 				System.out.println(mid);
 				break;
 			case 2:
