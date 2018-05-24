@@ -118,6 +118,7 @@ public class ArrayShape {
 			}
 			length = 0; //reset counter
 		}
+		
 		return (max);
 	}
 	
