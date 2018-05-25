@@ -31,7 +31,6 @@ public class Demo {
 			case 2:
 					ArrayShape shape = new ArrayShape(grid);
 					System.out.println(shape);
-					shape.test();
 					break;
 		}
 		System.out.println("\nWould you like to try another grid? "
@@ -39,5 +38,6 @@ public class Demo {
 		input = kb.nextInt();
 		} while(input == 1);
 
+		System.out.println("Program closed ...");
 	}
 }
